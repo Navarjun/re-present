@@ -1,0 +1,53 @@
+/*
+ * Global constants goes here
+ */
+:root {
+    --primary-color: #42b983;
+}
+
+
+/*
+ * Global CSS goes here
+ */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: auto;
+}
+#app {
+    color: #2c3e50;
+    font-family: Source Sans Pro, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#app > * {
+    flex: 1;
+    height: 100%;
+}
+#app > *:nth-child(2n) {
+    flex: 5
+}
+#app p {
+    text-align: justify;
+}
+.hello {
+    color: var(--primary-color);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
+ 

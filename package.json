@@ -1,0 +1,28 @@
+{
+  "name": "re-present",
+  "version": "0.0.0",
+  "description": "re-present data visualisation software",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack",
+    "start": "electron ."
+  },
+  "author": "Navarjun <navarjun.singh@gmail.com>",
+  "repository": "Navarjun/re-present",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.26.1",
+    "electron": "^1.4.15",
+    "electron-reload": "^1.1.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.9.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-desktop": "^0.3.2",
+    "react-dom": "^15.4.2"
+  }
+}
