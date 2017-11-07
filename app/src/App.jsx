@@ -12,21 +12,20 @@ const logos = [
     require('./assets/webpack.png')
 ]
 
-
 export default class App extends Component {
-    render() {
-        const logosRender = logos.map( (logo, index) => {
+    render () {
+        const logosRender = logos.map((logo, index) => {
             return <Logo key = {index} src = { logo } />
         })
 
         return (
             <div id="app">
-            <div style={{background: 'lightgrey'}}>
-            </div>
-            <div style={{background: 'seagreen'}}>
-            </div>
-            <div style={{background: 'steelblue'}}>
-            </div>
+                <div className="shadow">
+                </div>
+                <div>
+                </div>
+                <div className="shadow">
+                </div>
             </div>
         )
     }

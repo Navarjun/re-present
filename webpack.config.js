@@ -44,8 +44,7 @@ module.exports = {
             filename: 'bundle.css',
             disable: false,
             allChunks: true
-        }
-    )
-]
+        })
+    ]
 
 }
