@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-import {render} from 'react-dom'
 import {} from './styles/global.css'
 import Logo from './components/Logo.jsx'
-import Link from './components/Link.jsx'
-
-import {Box} from 'react-desktop'
+import InitialState from './states/InitialState.js'
+import DataLoaded from './states/DataLoaded'
 
 const logos = [
     require('./assets/electron.png'),
@@ -13,20 +11,25 @@ const logos = [
 ]
 
 export default class App extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {state: 'initial', data: null}
+    }
+
     render () {
         const logosRender = logos.map((logo, index) => {
             return <Logo key = {index} src = { logo } />
         })
+        
+        const dataLoaded = (data) => {
+            console.log(data)
+            this.setState({state: 'dataLoaded', data: data})
+        }
 
-        return (
-            <div id="app">
-                <div className="shadow">
-                </div>
-                <div>
-                </div>
-                <div className="shadow">
-                </div>
-            </div>
-        )
+        const ele = (this.state.state === 'initial')
+            ? <InitialState dataLoaded={dataLoaded}/>
+            : <DataLoaded data={this.state.data}/>
+
+        return ele
     }
 }
