@@ -1,31 +1,38 @@
 import React, {Component} from 'react'
-import {render} from 'react-dom'
 import {SegmentedControl, SegmentedControlItem, Box} from 'react-desktop'
+import DataView from './DataView'
 
 export default class Sidebar extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {state: 'data'}
+    }
+
     render () {
+        const ele = this.state.state === 'data'
+            ? <DataView/>
+            : null
         return (
             <div style={{marginTop: '20px'}}>
                 <SegmentedControl>
                     <SegmentedControlItem
                         key={1}
                         title={'Data'}
-                        selected={false}
-                        onSelect={() => this.setState({ selected: 1 })}
+                        selected={this.state.state === 'data'}
+                        onSelect={() => this.setState({ state: 'data' })}
                     >
-                        {'Data'}
                     </SegmentedControlItem>
 
                     <SegmentedControlItem
                         key={2}
                         title={'Visualisation'}
-                        selected={false}
-                        onSelect={() => this.setState({ selected: 2 })}
+                        selected={this.state.state === 'visualisation'}
+                        onSelect={() => this.setState({ selected: 'visualisation' })}
                     >
-                        {'Visualisation'}
                     </SegmentedControlItem>
                 </SegmentedControl>
-                <Box>
+                <Box style={{marginTop: '-10px', padding: '10px 15px 10px 15px'}}>
+                    {ele}
                 </Box>
             </div>
         )

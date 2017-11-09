@@ -4,6 +4,8 @@ import Logo from './components/Logo.jsx'
 import InitialState from './states/InitialState.js'
 import DataLoaded from './states/DataLoaded'
 
+import * as DM from './data/DataManager'
+
 const logos = [
     require('./assets/electron.png'),
     require('./assets/react.png'),
@@ -22,13 +24,13 @@ export default class App extends Component {
         })
         
         const dataLoaded = (data) => {
-            console.log(data)
-            this.setState({state: 'dataLoaded', data: data})
+            DM.setData(data)
+            this.setState({state: 'dataLoaded'})
         }
 
         const ele = (this.state.state === 'initial')
             ? <InitialState dataLoaded={dataLoaded}/>
-            : <DataLoaded data={this.state.data}/>
+            : <DataLoaded/>
 
         return ele
     }
